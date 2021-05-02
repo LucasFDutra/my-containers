@@ -1,0 +1,14 @@
+version: "3"
+
+services: 
+    db:
+        image: mysql
+        ports: 
+            - "3306:3306"
+        environment: 
+            MYSQL_ROOT_PASSWORD: 1234
+            MYSQL_DATABASE: dbtest
+            MYSQL_USER: mysqluser
+            MYSQL_PASSWORD: 123
+        volumes: 
+            - ~/.msdata:/var/lib/mysql
