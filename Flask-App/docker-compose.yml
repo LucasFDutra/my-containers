@@ -1,0 +1,11 @@
+version: "3"
+
+services: 
+    FlaskApp:
+        build: .
+        image: my/flask_app_name
+        ports: 
+            - "5000:5000"
+        environment: 
+            FLASK_ENV: development
+        command: "python main.py"

@@ -1,0 +1,10 @@
+version: "3"
+
+services: 
+    haproxy:
+        image: haproxy
+        ports: 
+            - "8888:8888"
+        volumes: 
+            - "./my_conf.cfg:/usr/local/etc/haproxy/my_conf.cfg"
+        command: "haproxy -f /usr/local/etc/haproxy/my_conf.cfg"
