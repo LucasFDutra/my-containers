@@ -1,0 +1,15 @@
+version: '3'
+services:
+  aws-glue:
+    image: amazon/aws-glue-libs:glue_libs_3.0.0_image_01
+    user: root
+    ports:
+      - "4040:4040"
+      - "18080:18080"
+      - "8888:8888"
+      - "8998:8998"
+    environment:
+      - DISABLE_SSL=true
+    volumes:
+      - "./:/home/glue_user/workspace/jupyter_workspace/"
+    command: /home/glue_user/jupyter/jupyter_start.sh
