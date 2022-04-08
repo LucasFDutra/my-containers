@@ -1,0 +1,21 @@
+version: "3"
+
+services:
+  oracle:
+    image: lucasfdutra/oracle-xe
+    ports:
+      - "1521:1521"
+    volumes:
+      - "./data:/shared"
+    environment:
+      - ORACLE_PWD=123
+
+
+# dicas para usar:
+  # - ele demora para iniciar, então inicie com docker-compose up (sem o -d) para ver quando ele irá terminar
+  # - para se conectar, utilize os seguintes parâmetros:
+  #   - server_host: 'localhost'
+  #   - port: 1521
+  #   - Database: XEPDB1
+  #   - User: system
+  #   - Password: 123
