@@ -1,0 +1,15 @@
+version: "3"
+
+services:
+  server-ftp:
+    image: bogem/ftp
+    ports:
+      - "20:20"
+      - "21:21"
+      - "47400-47470:47400-47470"
+    volumes:
+      - "./data:/home/vsftpd"
+    environment:
+      - FTP_USER=super_user
+      - FTP_PASS=super_senha
+      - PASV_ADDRESS=0.0.0.0
